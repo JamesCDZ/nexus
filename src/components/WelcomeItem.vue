@@ -1,87 +1,114 @@
+<script setup>
+import { data } from "./cars.json";
+import {ref} from "vue"
+
+const questions = ref(data)
+
+const car = ref("car")
+</script>
+
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
+  
+
+  <div class="container">
+<div class="cards">
+  <div class="card-container" v-for="question in questions" :key="question.id">
+    <div class="card"  >
+      <div class="image-container">
+        <div class="image-item" v-for="image in question.media_urls[0]" :key="image">
+            <!-- <p>{{ image }}</p> -->
+          <img :src="image">
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="content">{{ car }}</div>
+      </div>
     </div>
   </div>
+</div>
+</div>
 </template>
 
 <style scoped>
-.item {
-  margin-top: 2rem;
+img{
+  height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 9px 9px 9px 9px;
+}
+
+.container{
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.image-container{
   display: flex;
+  overflow: scroll;
+}
+
+.image-item{
   position: relative;
-}
+  min-width: 25%;
+  box-sizing: border-box;
+  left: 0;
 
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
+  }
 
-i {
+@media only screen and (min-width: 600px)  {
+
+  .cards{
+    align-items: stretch;
   display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width:100%;
   }
 
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
+  .container{
+    display: flex;
   }
 
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
+  .content-container{
+    margin-top: 70%;
+    
   }
 
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
+  img{
+        border-radius: 16px 16px 0px 0px;
+
   }
 
-  .item:first-of-type:before {
-    display: none;
+  .card{
+        border-radius: 16px 16px 16px 16px;
+
   }
 
-  .item:last-of-type:after {
-    display: none;
+  .image-item{
+  position: absolute;
+
+  box-sizing: border-box;
+  left: 0;
+  
   }
+
+  .card{
+
+    width:100%;
+    position: relative;
+    -webkit-box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.56);
+-moz-box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.56);
+box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.56);
+  }
+
+  .card-container{
+    width: 30%;
+  }
+
+
 }
 </style>
