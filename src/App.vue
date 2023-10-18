@@ -8,7 +8,7 @@ const cars = ref(data)
   <div class="container">
      <div class="sideBar">Sidebar placeholder</div>
      <div class="cars">
-        <template  v-for="(question, index) in cars" :key="index">
+        <template  v-for="(car, index) in cars" :key="index">
            <template v-if="index == 4">
               <div class="car-container">
                  <div class="value-your-car card">
@@ -20,26 +20,26 @@ const cars = ref(data)
            <div class="car-container">
               <article class="card"  >
                  <div class="image-container">
-                    <div class="image-item" v-for="image in question.media_urls[0]" :key="image">
+                    <div class="image-item" v-for="image in car.media_urls[0]" :key="image">
                        <img :src="image">
                        <div class="bottomTabs">
-                          <p class="pill">{{Math.round(question.odometer_value/1000)}}k {{ question.odometer_units }}</p>
+                          <p class="pill">{{Math.round(car.odometer_value/1000)}}k {{ car.odometer_units }}</p>
                        </div>
                     </div>
                  </div>
                  <div class="vehicle-information">
                     <div class="featured-information">
-                       <p class="featured-pill">{{ question.advert_classification }}</p>
+                       <p class="featured-pill">{{ car.advert_classification }}</p>
                     </div>
                     <div class="content">
                        <div>
-                          <h3>{{ question.plate }} {{ question.make }}</h3>
-                          <h4 class="sub-title">{{ question.derivative }}</h4>
+                          <h3>{{ car.plate }} {{ car.make }}</h3>
+                          <h4 class="sub-title">{{ car.derivative }}</h4>
                        </div>
                        <div class="content-bottom">
                           <div class="mobile-content">
-                             <p>{{Math.round(question.odometer_value/1000)}}k {{ question.odometer_units }} <span class="separator">|</span> {{ question.fuel_type }}</p>
-                             <p>{{question.transmission.charAt(0).toUpperCase() + question.transmission.slice(1).toLowerCase()}} <span class="separator">|</span> {{ question.body_type }}</p>
+                             <p>{{Math.round(car.odometer_value/1000)}}k {{ car.odometer_units }} <span class="separator">|</span> {{ car.fuel_type }}</p>
+                             <p>{{car.transmission.charAt(0).toUpperCase() + car.transmission.slice(1).toLowerCase()}} <span class="separator">|</span> {{ car.body_type }}</p>
                           </div>
                           <div class="price-container">
                              <h5><b>£550.90</b><span> /mo (PCP)</span></h5>
