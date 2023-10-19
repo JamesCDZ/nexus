@@ -118,18 +118,16 @@ ul{
   list-style:none;
   padding: 0;
   margin: 0px 10px 10px 0;
-
 }
 
 li + li:nth-child(even)::before {
-    content: " | ";
+  content: " | ";
 }
 
 ul li{
   float:left;
   padding:2px 5px 2px 0px;
 }
-
 
 //Default mobile page styles
 .header {
