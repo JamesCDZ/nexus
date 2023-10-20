@@ -60,9 +60,6 @@ addEventListener("resize", (event) => {
                   </template>
                 </div>
               </a>
-              <div class="bottomTabs">
-                <p class="pill">{{Math.round(car.odometer_value/1000)}}k {{ car.odometer_units }}</p>
-              </div>
               <!-- Imports the slideshow controls -->
               <slideControls @next-slide="nextSlide" @previous-slide="previousSlide" :id="index" />
             </div>
@@ -198,7 +195,6 @@ p {
 }
 
 .content-bottom {
-  position: relative;
 }
 
 .car-details {
@@ -330,6 +326,29 @@ img {
 }
 
 @media (min-width: $breakpoint-tablet) {
+
+  
+ul {
+  list-style: none;
+  padding: 0;
+
+  margin: 0px 10px 10px 0;
+  li {
+    float: left;
+    padding: 2px 5px 2px 0px;
+    background: #3f3a50;
+  color: white;
+  border-radius: 8px;
+  z-index: 99;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1px 10px 1px 10px;
+  }
+  li + li:nth-child(even)::before {
+    content: "";
+  }
+}
+
+
   h2 {
     font-size: 1.296rem;
   }
@@ -382,7 +401,11 @@ img {
   }
 
   .mobile-content {
-    display: none;
+    display: block;
+    top: -2.4rem;
+    color: white;
+    position: absolute;
+    max-width: 100%;
   }
 
   .viewButton {

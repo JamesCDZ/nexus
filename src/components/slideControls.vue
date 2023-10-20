@@ -46,7 +46,6 @@ function previousSlide(){
     </div>
 </template>
 
-
 <style scoped>
 .slide-text p {
     margin: 0.5rem;
