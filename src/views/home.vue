@@ -91,8 +91,8 @@ addEventListener("resize", (event) => {
                   <div class="price-container">
                     <h2>£550.90 <span> /mo (PCP)</span>
                     </h2>
-                    <h3 class="financeTagline">£23,300 <span> Calculate</span>
-                    </h3>
+                    <h4 class="financeTagline">£23,300 <span> Calculate</span>
+                    </h4>
                   </div>
                   <div class="cta-container">
                     <button class="viewButton">View</button>
