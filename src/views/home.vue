@@ -40,7 +40,7 @@ addEventListener("resize", (event) => {
       <template v-for="(car, index) in cars" :key="index">
         <!-- Adds the "value your car" card as the 5th card -->
         <template v-if="index == 4">
-          <div class="car-container">
+          <div class="information-container">
             <valueYourCar />
           </div>
         </template>
@@ -80,7 +80,7 @@ addEventListener("resize", (event) => {
                   </div>
                 </div>
                 <div class="content-bottom">
-                  <div class="mobile-content">
+                  <div class="detail-pills">
                     <ul>
                       <li>{{Math.round(car.odometer_value/1000)}}k {{ car.odometer_units }}</li>
                       <li>{{ car.fuel_type }}</li>
@@ -206,7 +206,7 @@ p {
   }
 }
 
-.mobile-content {
+.detail-pills {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -231,7 +231,7 @@ p {
   display: none;
 }
 
-.car-container {
+.car-container, .information-container {
   margin: 0 0 0.1rem 0.3rem;
 }
 
@@ -400,7 +400,7 @@ ul {
     bottom: 0;
   }
 
-  .mobile-content {
+  .detail-pills {
     display: block;
     top: -2.4rem;
     color: white;
@@ -468,9 +468,9 @@ ul {
     min-width: 100%;
   }
 
-  .car-container {
+  .car-container, .information-container {
     width: 45%;
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     .card {
       width: 100%;
       position: relative;
@@ -523,7 +523,7 @@ ul {
     display: block;
   }
 
-  .car-container {
+  .car-container, .information-container {
     width: 32%;
     margin-right: 0;
     box-sizing: border-box;
