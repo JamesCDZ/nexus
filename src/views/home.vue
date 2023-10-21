@@ -70,15 +70,18 @@ addEventListener("resize", (event) => {
               </div>
               <!-- Car information section -->
               <div class="content">
+                <!-- Top half of the content box -->
                 <div class="content-top">
                   <div class="car-details">
                     <h3>{{ car.plate }} {{ car.make }}</h3>
                     <h4 class="sub-title">{{ car.derivative }}</h4>
                   </div>
+                  <!-- Importing the star icon -->
                   <div>
                     <favouriteIcon />
                   </div>
                 </div>
+                <!-- Bottom half of the content box -->
                 <div class="content-bottom">
                   <div class="detail-pills">
                     <ul>
@@ -137,17 +140,6 @@ ul {
   display: none;
 }
 
-h4 {
-  margin: 0;
-}
-
-h3 {
-  margin: 0;
-  span {
-    display: none;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -175,6 +167,14 @@ h2 {
 
 h3 {
   font-size: 1.267rem;
+  margin: 0;
+  span {
+    display: none;
+  }
+}
+
+h4 {
+  margin: 0;
 }
 
 p {
@@ -192,9 +192,6 @@ p {
 .content-bottom,
 .content-top {
   display: flex;
-}
-
-.content-bottom {
 }
 
 .car-details {
@@ -231,7 +228,8 @@ p {
   display: none;
 }
 
-.car-container, .information-container {
+.car-container,
+.information-container {
   margin: 0 0 0.1rem 0.3rem;
 }
 
@@ -326,28 +324,21 @@ img {
 }
 
 @media (min-width: $breakpoint-tablet) {
+  ul {
+    display: flex;
+    gap: 2px;
 
-  
-ul {
-  list-style: none;
-  padding: 0;
-
-  margin: 0px 10px 10px 0;
-  li {
-    float: left;
-    padding: 2px 5px 2px 0px;
-    background: #3f3a50;
-  color: white;
-  border-radius: 8px;
-  z-index: 99;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1px 10px 1px 10px;
+    li {
+      background: #3f3a50;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1px 5px 1px 5px;
+      font-size: 15px;
+    }
+    li + li:nth-child(even)::before {
+      content: "";
+    }
   }
-  li + li:nth-child(even)::before {
-    content: "";
-  }
-}
-
 
   h2 {
     font-size: 1.296rem;
@@ -417,8 +408,8 @@ ul {
     font-family: "Overpass", sans-serif;
     height: 3rem;
     padding: 0px 0px 0px 0px;
-    width: 6.5rem;
-    margin: 0.4rem 0px;
+    width: 6rem;
+    margin: 0.9rem 0px;
     font-weight: 600;
     font-size: 16px;
   }
@@ -454,7 +445,7 @@ ul {
   }
 
   .vehicle-information {
-    padding: 0% 3% 3%;
+    padding: 0% 3% 0%;
   }
 
   img {
@@ -468,7 +459,8 @@ ul {
     min-width: 100%;
   }
 
-  .car-container, .information-container {
+  .car-container,
+  .information-container {
     width: 45%;
     margin: 0;
     .card {
@@ -492,6 +484,16 @@ ul {
 }
 
 @media (min-width: $breakpoint-desktop) {
+  ul {
+    gap: 5px;
+    margin: 0px 10px 10px 0;
+    li {
+      border-radius: 8px;
+      padding: 2px 10px;
+      font-size: 15px;
+    }
+  }
+
   .header {
     min-height: 237px;
     display: block;
@@ -523,7 +525,8 @@ ul {
     display: block;
   }
 
-  .car-container, .information-container {
+  .car-container,
+  .information-container {
     width: 32%;
     margin-right: 0;
     box-sizing: border-box;
@@ -533,5 +536,4 @@ ul {
     justify-content: start;
   }
 }
-
 </style>

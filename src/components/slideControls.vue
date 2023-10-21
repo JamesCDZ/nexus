@@ -46,34 +46,34 @@ function previousSlide(){
     </div>
 </template>
 
-<style scoped>
-.slide-text p {
-    margin: 0.5rem;
-}
-
-.slide-buttons {
-    display: flex;
-}
-
+<style scoped lang="scss">
 .slide-controls {
-    display: flex;
-    gap: 10px;
-}
+  display: flex;
+  gap: 10px;
 
-button {
+  p {
+    margin: 0.5rem;
+  }
+
+  .slide-buttons {
+    display: flex;
+  }
+
+  button {
     height: 32px;
+  }
 }
 
 .previous-image,
 .next-image {
-    display: block;
-    background: #3f3a50;
-    color: white;
-    border-radius: 8px;
-    z-index: 99;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 3px 10px 5px 10px;
-    font-size: 1em;
-    font-weight: bold;
+  display: block;
+  background: #3f3a50;
+  color: white;
+  border-radius: 8px;
+  z-index: 99;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3px 13px 5px;
+  font-size: 1em;
+  font-weight: bold;
 }
 </style>
